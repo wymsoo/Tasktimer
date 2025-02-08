@@ -32,7 +32,7 @@ class Task(db.Model):
 
 @app.route('/')
 def index():
-    return send_from_directory('.', 'todolist.html')
+    return send_from_directory('.', 'app.html')
 
 @app.route('/api/tasks', methods=['GET'])
 def get_tasks():
