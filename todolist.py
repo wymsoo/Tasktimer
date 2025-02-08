@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///tasks.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['STATIC_FOLDER'] = 'static'
+# app.config['STATIC_FOLDER'] = 'static'
 db = SQLAlchemy(app)
 
 class Task(db.Model):
@@ -32,7 +32,7 @@ class Task(db.Model):
 
 @app.route('/')
 def index():
-    return send_from_directory('.', 'todo-list.html')
+    return send_from_directory('.', 'todolist.html')
 
 @app.route('/api/tasks', methods=['GET'])
 def get_tasks():
@@ -159,7 +159,7 @@ def new_week():
         db.session.rollback()
         return jsonify({"msg": "Error adding default tasks", "error": str(e)}), 500
 
-if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
-        app.run(debug = False, host='0.0.0.0', port="5100")
+# if __name__ == "__main__":
+#     with app.app_context():
+#         db.create_all()
+#         app.run(debug = False, host='0.0.0.0', port="5100")
