@@ -1,5 +1,5 @@
 flask
-Flask==2.2.2
-Flask-SQLAlchemy==2.5.1
-SQLAlchemy==1.4.36
+Flask-SQLAlchemy
+SQLAlchemy
 gunicorn
+Werkzeug==2.2.2
