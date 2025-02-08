@@ -159,7 +159,7 @@ def new_week():
         db.session.rollback()
         return jsonify({"msg": "Error adding default tasks", "error": str(e)}), 500
 
-# if __name__ == "__main__":
-#     with app.app_context():
-#         db.create_all()
-#         app.run(debug = False, host='0.0.0.0', port="5100")
+if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
+        app.run(debug = True)
